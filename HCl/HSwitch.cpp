@@ -19,29 +19,25 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  
 #include "HCl.h"
 
-
-//********************************************CHECK BOX***********************************************
-
-
-HCheckBox::HCheckBox()
+HCheckBox::HSwitch()
 {
-	this->Type = "HCHECKBOX";
+	this->Type = "HSWITCH";
 
 }
-HCheckBox::HCheckBox(LPCSTR title)
+HCheckBox::HSwitch(LPCSTR title)
 {
 	this->title = title;
-	this->Type = "HCHECKBOX";
+	this->Type = "HSWITCH";
 }
-HCheckBox::~HCheckBox()
+HSwitch::~HSwitch()
 {
 }
-bool HCheckBox::MakeButton(HWND hwndFrame) {
+bool HSwitch::MakeButton(HWND hwndFrame) {
 	this->hwnd = CreateWindowEx(
 		0,
 		L"BUTTON",
 		NULL,
-		WS_VISIBLE | WS_TABSTOP | WS_CHILD | BS_CHECKBOX,
+		WS_VISIBLE | WS_TABSTOP | WS_CHILD | BS_SWITCH,
 		this->x, this->y, this->wd, this->ht,
 		hwndFrame,
 		NULL,
@@ -53,7 +49,7 @@ bool HCheckBox::MakeButton(HWND hwndFrame) {
 	SetWindowTextA(this->hwnd, this->title);
 	return true;
 }
-void HCheckBox::setLocation(int x, int y) {
+void HSwitch::setLocation(int x, int y) {
 	this->x = x;
 	this->y = y;
 	if (ButtonCreated) {
@@ -65,13 +61,13 @@ void HCheckBox::setLocation(int x, int y) {
 	}
 
 }
-void HCheckBox::setText(LPCSTR title) {
+void HSwitch::setText(LPCSTR title) {
 	this->title = title;
 	if (ButtonCreated) {
 		SetWindowTextA(this->hwnd, this->title);
 	}
 }
-void HCheckBox::setSize(int wd, int ht) {
+void HSwitch::setSize(int wd, int ht) {
 	this->wd = wd;
 	this->ht = ht;
 	if (ButtonCreated) {
@@ -82,21 +78,24 @@ void HCheckBox::setSize(int wd, int ht) {
 		SetWindowPos(this->hwnd, NULL, this->x, this->y, this->wd, this->ht, NULL);
 	}
 }
-Point HCheckBox::getLocation() {
+Point HSwitch::getLocation() {
 	Point point = Point(this->x, this->y);
 	return point;
 }
-Dimension HCheckBox::getSize() {
+Dimension HSwitch::getSize() {
 	Dimension dim = Dimension(this->wd, this->ht);
 	return dim;
 }
-String HCheckBox::getText() {
+String HSwitch::getText() {
 	return this->title;
 }
-void HCheckBox::addActionListener(int ActionListener(ActionEvent)) {
+void HSwitch::addActionListener(int ActionListener(ActionEvent)) {
 	this->ActionListener = ActionListener;
 	this->ActionListenerAdded = true;
 }
-bool HCheckBox::isChecked() {
-	return this->Checked;
+bool HSwitch::isToggled() {
+	return this->Toggled;
+}
+void HSwitch::Toggle(bool tgn) {
+	this->Toggled = tgn;
 }
