@@ -29,6 +29,16 @@ HComponentLibrary consist of classes below:
 |Point|Contains x and y axis|
 |String|Performs cast operations|
 
+## ToDo
+|-------|-----------|
+|DeviceListeners|Listens for a device that has been connected when the device gets disconnected it will remove that device from the list|
+|SelectDevices|Allows you to select a device thats connected to your pc|
+|Perms|Permission to change things on the device|
+|CheckBoxes|Check Boxes a button like thing that will stay true unless you click it again|
+|Switches|Switches like the check boxes but with a moving part|
+|Functions|Functions will be for like code to edit the app but also can be connected to 2 or more switches, checkboxes, buttons, and etc|
+|Scripts|Custom lil coding languages making it easier to change things has similar syntaxs to LuaU, Lua|
+
 ## Sample Applications
 A Java Swing developer can easily understand how to use HComponentLibrary with these examples.
 ### "Hello World" Application
