@@ -30,6 +30,7 @@ HComponentLibrary consist of classes below:
 |String|Performs cast operations|
 
 ## ToDo
+|Things|Explanation|
 |-------|-----------|
 |DeviceListeners|Listens for a device that has been connected when the device gets disconnected it will remove that device from the list|
 |SelectDevices|Allows you to select a device thats connected to your pc|
