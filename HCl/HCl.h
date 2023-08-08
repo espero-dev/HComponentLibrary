@@ -38,6 +38,7 @@ using namespace std;
 class HFrame;
 class Component;
 class HCheckBox;
+class HSwitch;
 class HRadioButton;
 class HTextField;
 class ButtonGroup;
@@ -156,6 +157,7 @@ public:
 	int(*KeyListener)(KeyEvent);
 	int(*ActionListener)(ActionEvent);
 
+	bool Toggled = false;
 	bool Checked = false;
 	ButtonGroup* getButtonGroup();
 	void setButtonGroup(ButtonGroup* buttonGroup);
@@ -219,6 +221,34 @@ public:
 	Dimension getSize();
 	String getText();
 	~HCheckBox();
+
+	bool isChecked();
+
+	//void addKeyListener(int KeyListener(KeyEvent)); yapilandirilmadi
+	void addActionListener(int ActionListener(ActionEvent));
+
+
+
+private:
+	bool WINAPI setVisible(bool visible) { return 0; };
+	int getDefaultCloseOperation() { return 0; };
+	bool ButtonCreated = false;
+	LPCSTR title = "NO TITLED CHECK BOX";
+};
+class HCL_API HSwitch :public Component
+{
+public:
+	HSwitch();
+	HSwitch(LPCSTR);
+	bool MakeButton(HWND);
+	void setLocation(int, int);
+	void setText(LPCSTR);
+	void setSize(int, int);
+
+	Point getLocation();
+	Dimension getSize();
+	String getText();
+	~HSwitch();
 
 	bool isChecked();
 
