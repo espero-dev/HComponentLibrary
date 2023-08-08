@@ -17,6 +17,7 @@ HComponentLibrary consist of classes below:
 |Dimension|Contains width and height values|
 |HButton|Creates a clickable button|
 |HCheckBox|Creates a checkbox|
+|Switches|Switches like the check boxes but with a moving part|
 |HComboBox|Creates a dropdown list|
 |HFrame|Creates an application window which can be main window|
 |HInternalFrame|Creates a window which can be displayed inside panels|
@@ -35,7 +36,6 @@ HComponentLibrary consist of classes below:
 |DeviceListeners|Listens for a device that has been connected when the device gets disconnected it will remove that device from the list|
 |SelectDevices|Allows you to select a device thats connected to your pc|
 |Perms|Permission to change things on the device|
-|Switches|Switches like the check boxes but with a moving part|
 |Functions|Functions will be for like code to edit the app but also can be connected to 2 or more switches, checkboxes, buttons, and etc|
 |Scripts|Custom lil coding languages making it easier to change things has similar syntaxs to LuaU, Lua|
 
